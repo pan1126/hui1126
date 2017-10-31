@@ -13,6 +13,8 @@ import news from './components/news/news-one.vue'
 
 import info from './components/news/news-two.vue'
 
+import photolist from './components/photo/photolist.vue'
+
 
 
  var routers = new vueRouter({
@@ -22,7 +24,8 @@ import info from './components/news/news-two.vue'
 			{path:'*',redirect:'./home'},
 			{path:'/home',component:home},
 			{path:'/news/newslist',component:news},
-			{path:'/news/newsinfo:id',component:info}
+			{path:'/news/newsinfo:id',component:info},
+				{path:'/photo/photolist',component:photolist}
 		
 	]
 	});
