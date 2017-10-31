@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue221.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+			<button @click="name='login'">登陆</button>
+			<button @click="name='hille'">注册</button>
+			
+			<components :is=name></components>
+			
+		</div>
+		
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					name:'login'
+				},
+				components:{
+					'login':{
+						template:"<div><h1>这是登陆</h1></div>"
+					},
+					'hille':{
+						template:"<div><h1>这是注册</h1></div>"
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>

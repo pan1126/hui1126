@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="vue221.js"></script>
+	<body>
+		
+		
+		<div id="app">
+			<button @click="getcont">获取父组件中的DOM元素</button>
+			<div ref='myscom'>这是我的</div>
+			
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				methods:{
+					getcont:function(){
+						console.log(this.$refs.myscom)
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>

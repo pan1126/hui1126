@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue221.js"></script>
+		<script src="vue-router231.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+			<router-link to='/login'>登陆</router-link>
+			<router-link to='/che'>注册</router-link>
+			
+			<router-view></router-view>
+		</div>
+		
+		<script>
+			
+			var delu=Vue.extend({         //定义一个组件
+				template:'<div>登陆组件</div>'
+			})
+			
+			var zhuce=Vue.extend({
+				template:'<div>注册组件</div>'
+			})
+			
+			var route=new VueRouter({   //创建一个路由对象
+				routes:[                
+				                        
+					{
+						path:'/login',   //path 分发路由，表示的是地址# 后面的
+						component:delu   // 注册组件
+					},
+					{
+						path:'/che',
+						component:zhuce
+					}
+				]
+			})
+			
+			new Vue({
+				el:"#app",
+				router:route
+			})
+			
+		</script>
+		
+	</body>
+</html>

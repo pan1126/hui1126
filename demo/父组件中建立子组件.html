@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue221.js"></script>
+	</head>
+	<body>
+		
+		
+		
+		
+		<div id="app">
+			
+			
+			<sss></sss>
+			<login1></login1>
+		</div>
+		
+		
+		<script>
+			Vue.component('sss',{
+				template:"<div><h1>这是父组件</h1>   <login></login> </div>",
+				components:{
+					'login':{
+						template:"<h2>这是在sss组件中的子组件  ----- {{msg}}</h2>",
+						data:function(){
+							return {
+								msg:"123456"
+							}
+						}
+					}
+				}
+			})
+			
+			new Vue({
+				el:'#app',
+				components:{
+					'login1':{
+						template:'<h3>这是在Vue实例对象中的组件</h3>'
+					}
+				}
+			})
+			
+			
+		</script>
+		
+	</body>
+</html>
