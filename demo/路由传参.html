@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue221.js"></script>
+		<script src="vue-router231.js"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			
+			<router-link to="/login/rouse">登陆</router-link>
+			<router-link to="/yewss/vvn">注册</router-link>
+			
+			<router-view></router-view>
+			
+		</div>
+		
+		
+		<script>
+			var lol=Vue.extend({
+				template:"<div>这是登陆{{num}}</div>",
+				data:function(){
+					return {
+						num:''	
+					}
+				},
+				created:function(){
+					this.num=this.$route.params.name1  //接受传递的参数
+				}
+			})
+			var lpl=Vue.extend({   
+				template:"<div>这是注册{{vum}}</div>",
+				data:function(){
+					return {
+						vum:""
+					}
+				},
+				created:function(){
+					this.vum=this.$route.params.name
+				}
+			})
+			
+			
+			
+			var mum=new VueRouter({
+				routes:[
+						{
+							path:"/login/:name1",
+							component:lol
+						},
+						{
+							path:"/yewss/:name",
+							component:lpl
+						}
+				]
+			})
+			
+			
+			new Vue({
+				el:'#app',
+				router:mum
+			})
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

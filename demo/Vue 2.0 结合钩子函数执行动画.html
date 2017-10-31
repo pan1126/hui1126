@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="animate.css" />
+		<script src="vue221.js"></script>
+		
+		<style>
+			.show{
+				transition: all 0.4s ease;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app">
+			<button @click="btn">切换动画显示</button>
+			
+			<transition
+				@before-enter="before"
+				@enter="enter"
+				@after-enter="after"							
+				>
+				
+				<div v-show="toggle" class="show" style="width: 100px;">1231321</div>
+			</transition>
+			
+			
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					toggle:false
+				},
+				methods:{
+					btn:function(){
+						this.toggle=!this.toggle
+					},
+					before:function(el){
+						el.style.transform='translate(100px,0)'	
+					},
+					enter:function(el,done){
+						el.offsetWidth
+						el.style.transform="translate(10px,0)"
+						done()
+					},
+					after:function(el){
+						this.toggle=!this.toggle
+					}
+					
+				}
+				
+				
+			})
+			
+			
+		</script>
+	</body>
+	
+</html>

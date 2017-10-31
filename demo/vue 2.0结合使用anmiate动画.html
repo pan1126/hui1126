@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="animate.css" />
+	</head>
+	<body>
+		
+		<div id="app">
+			
+			
+			<button @click="btn">隐藏显示</button>
+			<transition
+				enter-active-class="animated fadeInRight"
+				leave-active-class="animated fadeOutRight"
+				
+				
+				
+				>
+				
+				
+				<div v-show='sss'>1321231654</div>
+			</transition>
+			
+			
+		</div>
+		
+		
+		
+		<script src="vue221.js"></script>
+		<script>
+			
+			new Vue({
+				el:"#app",
+				data:{
+					sss:false
+				},
+				methods:{
+					btn:function(){
+						this.sss=!this.sss
+					}
+				}
+				
+			})
+			
+			
+		</script>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue221.js"></script>
+	</head>
+	<body>
+		
+		<template id="lpl">
+			<p>{{ssp}}</p>
+		</template>
+		
+		
+		<div id="app">
+			<login :ssp=name></login>
+		</div>
+
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					name:'100'
+				},
+				components:{
+					
+					'login':{
+						template:'#lpl',
+						props:['ssp']
+					}
+					
+				}
+				
+			})
+			
+			
+		</script>
+		
+	</body>
+</html>

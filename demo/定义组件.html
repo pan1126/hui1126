@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue221.js"></script>
+		
+	</head>
+	<body>
+		<template id="art">
+			<a href="javascript:viod(0)">你问i什么呢</a>
+		</template>
+		
+		<div id="app">
+			<conut></conut>
+		</div>
+		
+		
+	</body>
+	<script>
+		
+		//组件就是对方法和视图的封装
+		
+		//component参数为两个 ,第一个为组件名,第二个为对象里面有组件模板的信息     然后再Vue管理的区域内以组件名显示出要显示的模板
+		
+		
+		Vue.component('conut',{
+			template:"#art"
+		})
+		
+		new Vue({
+			el:"#app",
+			
+		})
+		
+		
+	</script>
+</html>

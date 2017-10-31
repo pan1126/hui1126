@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue221.js"></script>
+	</head>
+	<body>
+		
+		<template id="lpl">
+			
+			<button @click="sendcont">传递</button>
+			
+		</template>
+		 
+		<div id='app'>
+			<login v-on:send='getcont'></login>
+			<div>{{name}}</div>
+		</div>
+		
+		
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					name:null
+				},
+				methods:{
+					getcont:function(test){
+						this.name=test
+					}
+				},
+				components:{
+					'login':{
+						template:"#lpl",
+						methods:{
+							sendcont:function(){
+								this.$emit('send','hello world')
+								
+								//this.$emit固定写法； 第一个参数书传递消息的名字，第二个参数为传递该消息的内容
+							}
+						}
+					}
+					
+				}
+				
+			})
+			
+		</script>
+	</body>
+</html>
